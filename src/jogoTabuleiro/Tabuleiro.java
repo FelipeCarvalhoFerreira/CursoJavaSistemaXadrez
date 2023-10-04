@@ -37,13 +37,26 @@ public class Tabuleiro {
 		return pecas [posicao.getLinha()][posicao.getColuna()];
 	}
 	
-	public void lugarPeca(Peca peca, Posicao posicao) {
+	public void moverPecaLugar(Peca peca, Posicao posicao) {
 		if (ExistePeca(posicao)) {
 			throw new TabuleiroExcecao("Já existe uma peça na posição " + posicao);
 			
 		}
-		pecas[posicao.getLinha()][posicao.getColuna()] = peca;
+		pecas[posicao.getLinha()][posicao.getColuna()] = peca;	
 		peca.posicao = posicao;
+	}
+	
+	public Peca removerPeca(Posicao posicao) {
+		if (!ExistePosicao(posicao)) {
+			throw new TabuleiroExcecao("Não Existe a posição no Tabuleiro");
+		}
+		if (peca(posicao) == null) {
+			return null;
+		}
+		Peca sobreporPeca = peca(posicao);
+		sobreporPeca.posicao = null;
+		pecas [posicao.getLinha()] [posicao.getColuna()] = null;
+		return sobreporPeca;
 	}
 	
 	private boolean ExistePosicao (Integer linha, Integer coluna) {
