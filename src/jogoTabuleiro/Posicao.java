@@ -25,6 +25,11 @@ public class Posicao {
 	public void setColuna(Integer coluna) {
 		this.coluna = coluna;
 	}
+	
+	public void setNovaPosicao(Integer linha, Integer coluna) {
+		this.linha = linha;
+		this.coluna = coluna;
+	}
 
 	@Override
 	public String toString() {
