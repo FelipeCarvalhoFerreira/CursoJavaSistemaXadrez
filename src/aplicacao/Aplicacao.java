@@ -18,7 +18,7 @@ public class Aplicacao {
 		while (true) {
 			try {
 				UsuarioInterface.limparTela();
-				UsuarioInterface.printarTabuleiro(partidaXadrez.getPecas());
+				UsuarioInterface.printarPartida(partidaXadrez);
 				System.out.println();
 				System.out.print("Posicao Origem: ");
 				PosicaoXadrez posicaoOrigem = UsuarioInterface.lerPosicaoXadrez(sc);
