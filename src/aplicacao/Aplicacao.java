@@ -19,7 +19,6 @@ public class Aplicacao {
 			System.out.print("Posicao Origem: ");
 			PosicaoXadrez posicaoOrigem = UsuarioInterface.lerPosicaoXadrez(sc);
 			
-			System.out.println();
 			System.out.print("Posicao Destino: ");
 			PosicaoXadrez posicaoDestino = UsuarioInterface.lerPosicaoXadrez(sc);
 			
