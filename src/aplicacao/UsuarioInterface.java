@@ -21,14 +21,14 @@ public class UsuarioInterface {
 	public static final String ANSI_CYAN = "\u001B[36m";
 	public static final String ANSI_WHITE = "\u001B[37m";
 
-	public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
-	public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
-	public static final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
-	public static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
-	public static final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
-	public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
-	public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
-	public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
+	public static final String ANSI_BLACK_CORFUNDO = "\u001B[40m";
+	public static final String ANSI_RED_CORFUNDO = "\u001B[41m";
+	public static final String ANSI_GREEN_CORFUNDO = "\u001B[42m";
+	public static final String ANSI_YELLOW_CORFUNDO = "\u001B[43m";
+	public static final String ANSI_BLUE_CORFUNDO = "\u001B[44m";
+	public static final String ANSI_PURPLE_CORFUNDO = "\u001B[45m";
+	public static final String ANSI_CYAN_CORFUNDO = "\u001B[46m";
+	public static final String ANSI_WHITE_CORFUNDO = "\u001B[47m";
 
 	// https://stackoverflow.com/questions/2979383/java-clear-the-console
 	public static void limparTela() {
@@ -70,9 +70,9 @@ public class UsuarioInterface {
 		System.out.println("  a b c d e f g h");
 	}
 
-	private static void pritarPeca(PecaXadrez peca, boolean background) {
-		if (background) {
-			System.out.print(ANSI_BLUE_BACKGROUND);
+	private static void pritarPeca(PecaXadrez peca, boolean corFundo) {
+		if (corFundo) {
+			System.out.print(ANSI_BLUE_CORFUNDO);
 		}
 		if (peca == null) {
 			System.out.print("-" + ANSI_RESET);
