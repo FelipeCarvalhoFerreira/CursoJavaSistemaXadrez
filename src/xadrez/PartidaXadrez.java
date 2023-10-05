@@ -42,7 +42,7 @@ public class PartidaXadrez {
 	
 	private void ValidarPosicaoOrigem(Posicao posicao) {
 		if (!tabuleiro.ExistePeca(posicao)) {
-			throw new XadrezExcecao("Não Existe Peca na Posicao de Origem");
+			throw new XadrezExcecao("Nao Existe Peca na Posicao de Origem");
 		}
 	}
 	
