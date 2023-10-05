@@ -44,6 +44,10 @@ public class PartidaXadrez {
 		if (!tabuleiro.ExistePeca(posicao)) {
 			throw new XadrezExcecao("Nao Existe Peca na Posicao de Origem");
 		}
+		
+		if (!tabuleiro.peca(posicao).ExisteAlgumMovimentoPossivel()) {
+			throw new XadrezExcecao("Nao ha movimentos possiveis para a peca escolhida");
+		}
 	}
 	
 	private void posicaoNovaPecaXadrez(char coluna, Integer linha, PecaXadrez peca ) {
