@@ -50,18 +50,32 @@ public class UsuarioInterface {
 	public static void printarTabuleiro(PecaXadrez[][] pecas) {
 		for (int l = 0; l < pecas.length; l++) {
 			System.out.print((8 - l) + " ");
-
 			for (int c = 0; c < pecas.length; c++) {
-				pritarPeca(pecas[l][c]);
+				pritarPeca(pecas[l][c], false);
 			}
 			System.out.println();
 		}
 		System.out.println("  a b c d e f g h");
 	}
 
-	private static void pritarPeca(PecaXadrez peca) {
+	public static void printarTabuleiro(PecaXadrez [][] pecas, boolean[][] movimentosPossiveis) {
+
+		for (int l = 0; l < pecas.length; l++) {
+			System.out.print((8 - l) + " ");
+			for (int c = 0; c < pecas.length; c++) {
+				pritarPeca(pecas[l][c], movimentosPossiveis[l][c]);
+			}
+			System.out.println();
+		}
+		System.out.println("  a b c d e f g h");
+	}
+
+	private static void pritarPeca(PecaXadrez peca, boolean background) {
+		if (background) {
+			System.out.print(ANSI_BLUE_BACKGROUND);
+		}
 		if (peca == null) {
-			System.out.print("-");
+			System.out.print("-" + ANSI_RESET);
 		} else {
 			if (peca.getCor() == Cor.WHITE) {
 				System.out.print(ANSI_WHITE + peca + ANSI_RESET);
