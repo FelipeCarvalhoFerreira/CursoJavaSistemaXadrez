@@ -39,7 +39,7 @@ public class Tabuleiro {
 	
 	public void moverPecaLugar(Peca peca, Posicao posicao) {
 		if (ExistePeca(posicao)) {
-			throw new TabuleiroExcecao("Já existe uma peça na posicao " + posicao);
+			throw new TabuleiroExcecao("Ja existe uma peca na posicao " + posicao);
 			
 		}
 		pecas[posicao.getLinha()][posicao.getColuna()] = peca;	

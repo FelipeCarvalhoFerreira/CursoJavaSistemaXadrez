@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import jogoTabuleiro.Peca;
 import jogoTabuleiro.Posicao;
 import jogoTabuleiro.Tabuleiro;
+import xadrez.peca.Peao;
 import xadrez.peca.Rei;
 import xadrez.peca.Torre;
 
@@ -193,12 +194,28 @@ public class PartidaXadrez {
 
 	private void inciarPartida() {
 
-		posicaoNovaPecaXadrez('h', 7, new Torre(tabuleiro, Cor.WHITE));
-		posicaoNovaPecaXadrez('d', 1, new Torre(tabuleiro, Cor.WHITE));
-		;
-		posicaoNovaPecaXadrez('e', 1, new Rei(tabuleiro, Cor.WHITE));
+		posicaoNovaPecaXadrez('a', 1, new Torre(tabuleiro, Cor.WHITE));
+        posicaoNovaPecaXadrez('h', 1, new Torre(tabuleiro, Cor.WHITE));
+        posicaoNovaPecaXadrez('e', 1, new Rei(tabuleiro, Cor.WHITE));
+        posicaoNovaPecaXadrez('a', 2, new Peao(tabuleiro, Cor.WHITE));
+        posicaoNovaPecaXadrez('b', 2, new Peao(tabuleiro, Cor.WHITE));
+        posicaoNovaPecaXadrez('c', 2, new Peao(tabuleiro, Cor.WHITE));
+        posicaoNovaPecaXadrez('d', 2, new Peao(tabuleiro, Cor.WHITE));
+        posicaoNovaPecaXadrez('e', 2, new Peao(tabuleiro, Cor.WHITE));
+        posicaoNovaPecaXadrez('f', 2, new Peao(tabuleiro, Cor.WHITE));
+        posicaoNovaPecaXadrez('g', 2, new Peao(tabuleiro, Cor.WHITE));
+        posicaoNovaPecaXadrez('h', 2, new Peao(tabuleiro, Cor.WHITE));
 
-		posicaoNovaPecaXadrez('b', 8, new Torre(tabuleiro, Cor.BLACK));
-		posicaoNovaPecaXadrez('a', 8, new Rei(tabuleiro, Cor.BLACK));
+        posicaoNovaPecaXadrez('a', 8, new Torre(tabuleiro, Cor.BLACK));
+        posicaoNovaPecaXadrez('e', 8, new Rei(tabuleiro, Cor.BLACK));
+        posicaoNovaPecaXadrez('h', 8, new Torre(tabuleiro, Cor.BLACK));
+        posicaoNovaPecaXadrez('a', 7, new Peao(tabuleiro, Cor.BLACK));
+        posicaoNovaPecaXadrez('b', 7, new Peao(tabuleiro, Cor.BLACK));
+        posicaoNovaPecaXadrez('c', 7, new Peao(tabuleiro, Cor.BLACK));
+        posicaoNovaPecaXadrez('d', 7, new Peao(tabuleiro, Cor.BLACK));
+        posicaoNovaPecaXadrez('e', 7, new Peao(tabuleiro, Cor.BLACK));
+        posicaoNovaPecaXadrez('f', 7, new Peao(tabuleiro, Cor.BLACK));
+        posicaoNovaPecaXadrez('g', 7, new Peao(tabuleiro, Cor.BLACK));
+        posicaoNovaPecaXadrez('h', 7, new Peao(tabuleiro, Cor.BLACK));
 	}
 }

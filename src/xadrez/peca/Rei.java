@@ -70,7 +70,7 @@ public class Rei extends PecaXadrez {
 		}
 
 		// MoverParaDiagonalSentidoSuldeste
-		movimentoRei.setNovaPosicao(posicao.getLinha() + 1, posicao.getColuna() +	 1);
+		movimentoRei.setNovaPosicao(posicao.getLinha() + 1, posicao.getColuna() + 1);
 		if (getTabuleiro().ExistePosicao(movimentoRei) && podeMover(movimentoRei)) {
 			movimentosPossiveis[movimentoRei.getLinha()][movimentoRei.getColuna()] = true;
 		}
