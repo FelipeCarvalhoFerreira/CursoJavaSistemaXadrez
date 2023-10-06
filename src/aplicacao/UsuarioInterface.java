@@ -57,11 +57,17 @@ public class UsuarioInterface {
 		imprimirPecasCapturadas(listaPecasCapturadas);
 		System.out.println();
 		System.out.println("Quantidade de Jogadas: " + partidaXadrez.getVezJogador());
-		System.out.println("Esperando Jogador: " + partidaXadrez.getAtualJogador());
 		
-		if(partidaXadrez.getCheque()) {
-			System.out.println("Seu rei est em CHEQUE");
-			
+		if(!partidaXadrez.getChequeMate()) {
+			System.out.println("Esperando Jogador: " + partidaXadrez.getAtualJogador());
+		
+			if(partidaXadrez.getCheque()) {
+				System.out.println("Seu rei est em CHEQUE");
+			}
+		}
+		else {
+			System.out.println("CHEQUE MATE");
+			System.out.println("Vencedor: " + partidaXadrez.getAtualJogador());
 		}
 	}
 
