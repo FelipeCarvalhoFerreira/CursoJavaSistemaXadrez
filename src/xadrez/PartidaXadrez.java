@@ -1,5 +1,8 @@
 package xadrez;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jogoTabuleiro.Peca;
 import jogoTabuleiro.Posicao;
 import jogoTabuleiro.Tabuleiro;
@@ -11,6 +14,9 @@ public class PartidaXadrez {
 	private Integer vezJogador;
 	private Cor atualJogador;
 	private Tabuleiro tabuleiro;
+	
+	private List<Peca> pecasDoTabuleiro = new ArrayList<>();
+	private List<Peca> pecasCapturadas = new ArrayList<>();
 
 	public PartidaXadrez() {
 		tabuleiro = new Tabuleiro(8, 8);
@@ -57,6 +63,11 @@ public class PartidaXadrez {
 		Peca moverPecaOrigem = tabuleiro.removerPeca(posicaoOrigem);
 		Peca capturarPecaRemovida = tabuleiro.removerPeca(posicaoDestino);
 		tabuleiro.moverPecaLugar(moverPecaOrigem, posicaoDestino);
+		
+		if(capturarPecaRemovida != null) {
+			pecasDoTabuleiro.remove(capturarPecaRemovida);
+			pecasCapturadas.add(capturarPecaRemovida);
+		}
 		return capturarPecaRemovida;
 	}
 
@@ -79,15 +90,15 @@ public class PartidaXadrez {
 			throw new XadrezExcecao("A peca escolhida nao pode se mover para a posicao alvo");
 		}
 	}
-
-	private void posicaoNovaPecaXadrez(char coluna, Integer linha, PecaXadrez peca) {
-		tabuleiro.moverPecaLugar(peca, new PosicaoXadrez(coluna, linha).paraPosicao());
-	}
-
+	
 	private void vezProximoJogador() {
 		vezJogador++;
 		atualJogador = (atualJogador == Cor.WHITE) ? Cor.BLACK : Cor.WHITE;
+	}
 
+	private void posicaoNovaPecaXadrez(char coluna, Integer linha, PecaXadrez peca) {
+		tabuleiro.moverPecaLugar(peca, new PosicaoXadrez(coluna, linha).paraPosicao());
+		pecasDoTabuleiro.add(peca);
 	}
 
 	private void inciarPartida() {

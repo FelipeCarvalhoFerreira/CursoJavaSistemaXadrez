@@ -1,7 +1,10 @@
 package aplicacao;
 
+import java.util.Arrays;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import xadrez.Cor;
 import xadrez.PartidaXadrez;
@@ -48,10 +51,12 @@ public class UsuarioInterface {
 		}
 	}
 	
-	public static void printarPartida(PartidaXadrez partidaXadrez) {
+	public static void printarPartida(PartidaXadrez partidaXadrez, List<PecaXadrez> listaPecasCapturadas) {
 		printarTabuleiro(partidaXadrez.getPecas());
 		System.out.println();
-		System.out.println("Vez: " + partidaXadrez.getVezJogador());
+		imprimirPecasCapturadas(listaPecasCapturadas);
+		System.out.println();
+		System.out.println("Quantidade de Jogadas: " + partidaXadrez.getVezJogador());
 		System.out.println("Esperando Jogador: " + partidaXadrez.getAtualJogador());
 	}
 
@@ -79,7 +84,7 @@ public class UsuarioInterface {
 	}
 
 	private static void pritarPeca(PecaXadrez peca, boolean corFundo) {
-		if (corFundo) {
+		if (corFundo) {	
 			System.out.print(ANSI_BLUE_CORFUNDO);
 		}
 		if (peca == null) {
@@ -92,6 +97,21 @@ public class UsuarioInterface {
 			}
 		}
 		System.out.print(" ");
+	}
+	
+	private static void imprimirPecasCapturadas(List<PecaXadrez> listaPecaXadrezCapturadas) {
+		List<PecaXadrez> listaPecaBrancas = listaPecaXadrezCapturadas.stream().filter(lista -> lista.getCor() == Cor.WHITE).collect(Collectors.toList());
+		List<PecaXadrez> listaPecaPretas = listaPecaXadrezCapturadas.stream().filter(lista -> lista.getCor() == Cor.BLACK).collect(Collectors.toList());
+		System.out.println("Pecas Capturadas:");
+		System.out.print("Pecas das Cores Brancas: ");
+		System.out.print(ANSI_WHITE);
+		System.out.println(Arrays.toString(listaPecaBrancas.toArray()));
+		System.out.print(ANSI_RESET);
+		
+		System.out.print("Pecas das Cores Pretas: ");
+		System.out.print(ANSI_YELLOW);
+		System.out.println(Arrays.toString(listaPecaPretas.toArray()));
+		System.out.print(ANSI_RESET);
 	}
 
 }
