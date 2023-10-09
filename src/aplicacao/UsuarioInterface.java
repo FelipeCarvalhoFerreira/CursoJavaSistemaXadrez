@@ -62,7 +62,7 @@ public class UsuarioInterface {
 			System.out.println("Esperando Jogador: " + partidaXadrez.getAtualJogador());
 		
 			if(partidaXadrez.getCheque()) {
-				System.out.println("Seu rei est em CHEQUE");
+				System.out.println("Seu rei esta em CHEQUE");
 			}
 		}
 		else {
