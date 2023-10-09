@@ -199,7 +199,7 @@ public class PartidaXadrez {
 
 		posicaoNovaPecaXadrez('a', 1, new Torre(tabuleiro, Cor.WHITE));
         posicaoNovaPecaXadrez('h', 1, new Torre(tabuleiro, Cor.WHITE));
-        posicaoNovaPecaXadrez('e', 1, new Rei(tabuleiro, Cor.WHITE));
+        posicaoNovaPecaXadrez('e', 1, new Rei(tabuleiro, Cor.WHITE, this));
         posicaoNovaPecaXadrez('d', 1, new Rainha(tabuleiro, Cor.WHITE));
         posicaoNovaPecaXadrez('c', 1, new Bispo(tabuleiro, Cor.WHITE));
         posicaoNovaPecaXadrez('f', 1, new Bispo(tabuleiro, Cor.WHITE));
@@ -215,7 +215,7 @@ public class PartidaXadrez {
         posicaoNovaPecaXadrez('h', 2, new Peao(tabuleiro, Cor.WHITE));
 
         posicaoNovaPecaXadrez('a', 8, new Torre(tabuleiro, Cor.BLACK));
-        posicaoNovaPecaXadrez('e', 8, new Rei(tabuleiro, Cor.BLACK));
+        posicaoNovaPecaXadrez('e', 8, new Rei(tabuleiro, Cor.BLACK, this));
         posicaoNovaPecaXadrez('d', 8, new Rainha(tabuleiro, Cor.BLACK));
         posicaoNovaPecaXadrez('h', 8, new Torre(tabuleiro, Cor.BLACK));
         posicaoNovaPecaXadrez('c', 8, new Bispo(tabuleiro, Cor.BLACK));
