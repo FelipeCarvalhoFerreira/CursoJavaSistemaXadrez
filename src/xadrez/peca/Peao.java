@@ -18,7 +18,6 @@ public class Peao extends PecaXadrez {
 		Posicao pos = new Posicao(0, 0);
 
 		if (getCor() == Cor.WHITE) {
-
 			pos.setNovaPosicao(posicao.getLinha() - 1, posicao.getColuna());
 			if (getTabuleiro().ExistePosicao(pos) && !getTabuleiro().ExistePeca(pos)) {
 				movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
@@ -40,7 +39,6 @@ public class Peao extends PecaXadrez {
 				movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 			}
 		}
-
 		else {
 			pos.setNovaPosicao(posicao.getLinha() + 1, posicao.getColuna());
 			if (getTabuleiro().ExistePosicao(pos) && !getTabuleiro().ExistePeca(pos)) {
