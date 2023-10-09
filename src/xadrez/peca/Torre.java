@@ -20,46 +20,46 @@ public class Torre extends PecaXadrez {
 	public boolean[][] movimentosPossiveis() {
 		boolean[][] movimentosPossiveis = new boolean[getTabuleiro().getLinhas()][getTabuleiro().getColunas()];
 
-		Posicao movimentoTorre = new Posicao(0, 0);
+		Posicao pos = new Posicao(0, 0);
 
 		// MoverParaCima
-		movimentoTorre.setNovaPosicao(posicao.getLinha() - 1, posicao.getColuna());
-		while (getTabuleiro().ExistePosicao(movimentoTorre) && !getTabuleiro().ExistePeca(movimentoTorre)) {
-			movimentosPossiveis[movimentoTorre.getLinha()][movimentoTorre.getColuna()] = true;
-			movimentoTorre.setLinha((movimentoTorre.getLinha() - 1));
+		pos.setNovaPosicao(posicao.getLinha() - 1, posicao.getColuna());
+		while (getTabuleiro().ExistePosicao(pos) && !getTabuleiro().ExistePeca(pos)) {
+			movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
+			pos.setLinha((pos.getLinha() - 1));
 		}
-		if (getTabuleiro().ExistePosicao(movimentoTorre) && existePecaOponente(movimentoTorre)) {
-			movimentosPossiveis[movimentoTorre.getLinha()][movimentoTorre.getColuna()] = true;
+		if (getTabuleiro().ExistePosicao(pos) && existePecaOponente(pos)) {
+			movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 		}
 
 		// MoverParaEsquerda
-		movimentoTorre.setNovaPosicao(posicao.getLinha(), posicao.getColuna() - 1);
-		while (getTabuleiro().ExistePosicao(movimentoTorre) && !getTabuleiro().ExistePeca(movimentoTorre)) {
-			movimentosPossiveis[movimentoTorre.getLinha()][movimentoTorre.getColuna()] = true;
-			movimentoTorre.setColuna((movimentoTorre.getColuna() - 1));
+		pos.setNovaPosicao(posicao.getLinha(), posicao.getColuna() - 1);
+		while (getTabuleiro().ExistePosicao(pos) && !getTabuleiro().ExistePeca(pos)) {
+			movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
+			pos.setColuna((pos.getColuna() - 1));
 		}
-		if (getTabuleiro().ExistePosicao(movimentoTorre) && existePecaOponente(movimentoTorre)) {
-			movimentosPossiveis[movimentoTorre.getLinha()][movimentoTorre.getColuna()] = true;
+		if (getTabuleiro().ExistePosicao(pos) && existePecaOponente(pos)) {
+			movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 		}
 
 		// MoverParaDireita
-		movimentoTorre.setNovaPosicao(posicao.getLinha(), posicao.getColuna() + 1);
-		while (getTabuleiro().ExistePosicao(movimentoTorre) && !getTabuleiro().ExistePeca(movimentoTorre)) {
-			movimentosPossiveis[movimentoTorre.getLinha()][movimentoTorre.getColuna()] = true;
-			movimentoTorre.setColuna((movimentoTorre.getColuna() + 1));
+		pos.setNovaPosicao(posicao.getLinha(), posicao.getColuna() + 1);
+		while (getTabuleiro().ExistePosicao(pos) && !getTabuleiro().ExistePeca(pos)) {
+			movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
+			pos.setColuna((pos.getColuna() + 1));
 		}
-		if (getTabuleiro().ExistePosicao(movimentoTorre) && existePecaOponente(movimentoTorre)) {
-			movimentosPossiveis[movimentoTorre.getLinha()][movimentoTorre.getColuna()] = true;
+		if (getTabuleiro().ExistePosicao(pos) && existePecaOponente(pos)) {
+			movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 		}
 
 		// MoverParaBaixo
-		movimentoTorre.setNovaPosicao(posicao.getLinha() + 1, posicao.getColuna());
-		while (getTabuleiro().ExistePosicao(movimentoTorre) && !getTabuleiro().ExistePeca(movimentoTorre)) {
-			movimentosPossiveis[movimentoTorre.getLinha()][movimentoTorre.getColuna()] = true;
-			movimentoTorre.setLinha((movimentoTorre.getLinha() + 1));
+		pos.setNovaPosicao(posicao.getLinha() + 1, posicao.getColuna());
+		while (getTabuleiro().ExistePosicao(pos) && !getTabuleiro().ExistePeca(pos)) {
+			movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
+			pos.setLinha((pos.getLinha() + 1));
 		}
-		if (getTabuleiro().ExistePosicao(movimentoTorre) && existePecaOponente(movimentoTorre)) {
-			movimentosPossiveis[movimentoTorre.getLinha()][movimentoTorre.getColuna()] = true;
+		if (getTabuleiro().ExistePosicao(pos) && existePecaOponente(pos)) {
+			movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 		}
 		return movimentosPossiveis;
 

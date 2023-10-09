@@ -12,63 +12,62 @@ public class Peao extends PecaXadrez {
 	}
 	
 	@Override
-	public String toString() {
-		return "P";
-	}
-
-	@Override
 	public boolean[][] movimentosPossiveis() {
-
 		boolean[][] movimentosPossiveis = new boolean[getTabuleiro().getLinhas()][getTabuleiro().getColunas()];
 
-		Posicao movimentoPeao = new Posicao(0, 0);
+		Posicao pos = new Posicao(0, 0);
 
 		if (getCor() == Cor.WHITE) {
 
-			movimentoPeao.setNovaPosicao(posicao.getLinha() - 1, posicao.getColuna());
-			if (getTabuleiro().ExistePosicao(movimentoPeao) && !getTabuleiro().ExistePeca(movimentoPeao)) {
-				movimentosPossiveis[movimentoPeao.getLinha()][movimentoPeao.getColuna()] = true;
+			pos.setNovaPosicao(posicao.getLinha() - 1, posicao.getColuna());
+			if (getTabuleiro().ExistePosicao(pos) && !getTabuleiro().ExistePeca(pos)) {
+				movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 			}
 
-			movimentoPeao.setNovaPosicao(posicao.getLinha() - 2, posicao.getColuna());
-			Posicao movimentoPeao2 = new Posicao(posicao.getLinha() - 1, posicao.getColuna());
-			if (getTabuleiro().ExistePosicao(movimentoPeao) && !getTabuleiro().ExistePeca(movimentoPeao) && getTabuleiro().ExistePosicao(movimentoPeao2) && !getTabuleiro().ExistePeca(movimentoPeao2) && getContagemMovimentos() == 0) {
-				movimentosPossiveis[movimentoPeao.getLinha()][movimentoPeao.getColuna()] = true;
+			pos.setNovaPosicao(posicao.getLinha() - 2, posicao.getColuna());
+			Posicao pos2 = new Posicao(posicao.getLinha() - 1, posicao.getColuna());
+			if (getTabuleiro().ExistePosicao(pos) && !getTabuleiro().ExistePeca(pos) && getTabuleiro().ExistePosicao(pos2) && !getTabuleiro().ExistePeca(pos2) && getContagemMovimento() == 0) {
+				movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 			}
 
-			movimentoPeao.setNovaPosicao(posicao.getLinha() - 1, posicao.getColuna() - 1);
-			if (getTabuleiro().ExistePosicao(movimentoPeao) && existePecaOponente(movimentoPeao)) {
-				movimentosPossiveis[movimentoPeao.getLinha()][movimentoPeao.getColuna()] = true;
+			pos.setNovaPosicao(posicao.getLinha() - 1, posicao.getColuna() - 1);
+			if (getTabuleiro().ExistePosicao(pos) && existePecaOponente(pos)) {
+				movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 			}
 
-			movimentoPeao.setNovaPosicao(posicao.getLinha() - 1, posicao.getColuna() + 1);
-			if (getTabuleiro().ExistePosicao(movimentoPeao) && existePecaOponente(movimentoPeao)) {
-				movimentosPossiveis[movimentoPeao.getLinha()][movimentoPeao.getColuna()] = true;
+			pos.setNovaPosicao(posicao.getLinha() - 1, posicao.getColuna() + 1);
+			if (getTabuleiro().ExistePosicao(pos) && existePecaOponente(pos)) {
+				movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 			}
 		}
 
 		else {
-			movimentoPeao.setNovaPosicao(posicao.getLinha() + 1, posicao.getColuna());
-			if (getTabuleiro().ExistePosicao(movimentoPeao) && !getTabuleiro().ExistePeca(movimentoPeao)) {
-				movimentosPossiveis[movimentoPeao.getLinha()][movimentoPeao.getColuna()] = true;
+			pos.setNovaPosicao(posicao.getLinha() + 1, posicao.getColuna());
+			if (getTabuleiro().ExistePosicao(pos) && !getTabuleiro().ExistePeca(pos)) {
+				movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 			}
 
-			movimentoPeao.setNovaPosicao(posicao.getLinha() + 2, posicao.getColuna());
-			Posicao movimentoPeao2 = new Posicao(posicao.getLinha() + 1, posicao.getColuna());
-			if (getTabuleiro().ExistePosicao(movimentoPeao) && !getTabuleiro().ExistePeca(movimentoPeao)&& getTabuleiro().ExistePosicao(movimentoPeao2) && !getTabuleiro().ExistePeca(movimentoPeao2) && getContagemMovimentos() == 0) {
-				movimentosPossiveis[movimentoPeao.getLinha()][movimentoPeao.getColuna()] = true;
+			pos.setNovaPosicao(posicao.getLinha() + 2, posicao.getColuna());
+			Posicao pos2 = new Posicao(posicao.getLinha() - 1, posicao.getColuna());
+			if (getTabuleiro().ExistePosicao(pos) && !getTabuleiro().ExistePeca(pos)&& getTabuleiro().ExistePosicao(pos2) && !getTabuleiro().ExistePeca(pos2) && getContagemMovimento() == 0) {
+				movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 			}
 
-			movimentoPeao.setNovaPosicao(posicao.getLinha() + 1, posicao.getColuna() - 1);
-			if (getTabuleiro().ExistePosicao(movimentoPeao) && existePecaOponente(movimentoPeao)) {
-				movimentosPossiveis[movimentoPeao.getLinha()][movimentoPeao.getColuna()] = true;
+			pos.setNovaPosicao(posicao.getLinha() + 1, posicao.getColuna() - 1);
+			if (getTabuleiro().ExistePosicao(pos) && existePecaOponente(pos)) {
+				movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 			}
 			
-			movimentoPeao.setNovaPosicao(posicao.getLinha() + 1, posicao.getColuna() + 1);
-			if (getTabuleiro().ExistePosicao(movimentoPeao) && existePecaOponente(movimentoPeao)) {
-				movimentosPossiveis[movimentoPeao.getLinha()][movimentoPeao.getColuna()] = true;
+			pos.setNovaPosicao(posicao.getLinha() + 1, posicao.getColuna() + 1);
+			if (getTabuleiro().ExistePosicao(pos) && existePecaOponente(pos)) {
+				movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 			}
 		}
 		return movimentosPossiveis;
+	}
+	
+	@Override
+	public String toString() {
+		return "P";
 	}
 }

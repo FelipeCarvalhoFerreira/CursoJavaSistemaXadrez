@@ -1,4 +1,4 @@
-package xadrez.peca;
+	package xadrez.peca;
 
 import jogoTabuleiro.Posicao;
 import jogoTabuleiro.Tabuleiro;
@@ -25,54 +25,54 @@ public class Rei extends PecaXadrez {
 	public boolean[][] movimentosPossiveis() {
 		boolean[][] movimentosPossiveis = new boolean[getTabuleiro().getLinhas()][getTabuleiro().getColunas()];
 
-		Posicao movimentoRei = new Posicao(0, 0);
+		Posicao pos = new Posicao(0, 0);
 
 		// MoverParaCima
-		movimentoRei.setNovaPosicao(posicao.getLinha() - 1, posicao.getColuna());
-		if (getTabuleiro().ExistePosicao(movimentoRei) && podeMover(movimentoRei)) {
-			movimentosPossiveis[movimentoRei.getLinha()][movimentoRei.getColuna()] = true;
+		pos.setNovaPosicao(posicao.getLinha() - 1, posicao.getColuna());
+		if (getTabuleiro().ExistePosicao(pos) && podeMover(pos)) {
+			movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 		}
 
 		// MoverParaBaixo
-		movimentoRei.setNovaPosicao(posicao.getLinha() + 1, posicao.getColuna());
-		if (getTabuleiro().ExistePosicao(movimentoRei) && podeMover(movimentoRei)) {
-			movimentosPossiveis[movimentoRei.getLinha()][movimentoRei.getColuna()] = true;
+		pos.setNovaPosicao(posicao.getLinha() + 1, posicao.getColuna());
+		if (getTabuleiro().ExistePosicao(pos) && podeMover(pos)) {
+			movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 		}
 
 		// MoverParaEsquerda
-		movimentoRei.setNovaPosicao(posicao.getLinha(), posicao.getColuna() - 1);
-		if (getTabuleiro().ExistePosicao(movimentoRei) && podeMover(movimentoRei)) {
-			movimentosPossiveis[movimentoRei.getLinha()][movimentoRei.getColuna()] = true;
+		pos.setNovaPosicao(posicao.getLinha(), posicao.getColuna() - 1);
+		if (getTabuleiro().ExistePosicao(pos) && podeMover(pos)) {
+			movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 		}
 
 		// MoverParaDireita
-		movimentoRei.setNovaPosicao(posicao.getLinha(), posicao.getColuna() + 1);
-		if (getTabuleiro().ExistePosicao(movimentoRei) && podeMover(movimentoRei)) {
-			movimentosPossiveis[movimentoRei.getLinha()][movimentoRei.getColuna()] = true;
+		pos.setNovaPosicao(posicao.getLinha(), posicao.getColuna() + 1);
+		if (getTabuleiro().ExistePosicao(pos) && podeMover(pos)) {
+			movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 		}
 
 		// MoverParaDiagonalSentidoNoroeste
-		movimentoRei.setNovaPosicao(posicao.getLinha() - 1, posicao.getColuna() - 1);
-		if (getTabuleiro().ExistePosicao(movimentoRei) && podeMover(movimentoRei)) {
-			movimentosPossiveis[movimentoRei.getLinha()][movimentoRei.getColuna()] = true;
+		pos.setNovaPosicao(posicao.getLinha() - 1, posicao.getColuna() - 1);
+		if (getTabuleiro().ExistePosicao(pos) && podeMover(pos)) {
+			movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 		}
 
 		// MoverParaDiagonalSentidoNordeste
-		movimentoRei.setNovaPosicao(posicao.getLinha() - 1, posicao.getColuna() + 1);
-		if (getTabuleiro().ExistePosicao(movimentoRei) && podeMover(movimentoRei)) {
-			movimentosPossiveis[movimentoRei.getLinha()][movimentoRei.getColuna()] = true;
+		pos.setNovaPosicao(posicao.getLinha() - 1, posicao.getColuna() + 1);
+		if (getTabuleiro().ExistePosicao(pos) && podeMover(pos)) {
+			movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 		}
 
 		// MoverParaDiagonalSentidoSuldoeste
-		movimentoRei.setNovaPosicao(posicao.getLinha() + 1, posicao.getColuna() - 1);
-		if (getTabuleiro().ExistePosicao(movimentoRei) && podeMover(movimentoRei)) {
-			movimentosPossiveis[movimentoRei.getLinha()][movimentoRei.getColuna()] = true;
+		pos.setNovaPosicao(posicao.getLinha() + 1, posicao.getColuna() - 1);
+		if (getTabuleiro().ExistePosicao(pos) && podeMover(pos)) {
+			movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 		}
 
 		// MoverParaDiagonalSentidoSuldeste
-		movimentoRei.setNovaPosicao(posicao.getLinha() + 1, posicao.getColuna() + 1);
-		if (getTabuleiro().ExistePosicao(movimentoRei) && podeMover(movimentoRei)) {
-			movimentosPossiveis[movimentoRei.getLinha()][movimentoRei.getColuna()] = true;
+		pos.setNovaPosicao(posicao.getLinha() + 1, posicao.getColuna() + 1);
+		if (getTabuleiro().ExistePosicao(pos) && podeMover(pos)) {
+			movimentosPossiveis[pos.getLinha()][pos.getColuna()] = true;
 		}
 
 		return movimentosPossiveis;
