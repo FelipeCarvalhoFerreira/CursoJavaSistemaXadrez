@@ -40,7 +40,11 @@ public class Aplicacao {
 				
 				if (partidaXadrez.getPecaPromovida() != null) {
 					System.out.print("Digite peca para promocao (Q(Rainha)/B/C/T): ");
-					String tipo = sc.nextLine();
+					String tipo = sc.nextLine().toUpperCase();
+					while (!tipo.equals("T") && !tipo.equals("C") && !tipo.equals("B") && !tipo.equals("Q")) {
+						System.out.print("Valor Invalido! Digite novamente a peca para promocao (Q(Rainha)/B/C/T): ");
+						tipo = sc.nextLine().toUpperCase();
+					}
 					partidaXadrez.substituirPecaPromovida(tipo);
 				}
 			}
