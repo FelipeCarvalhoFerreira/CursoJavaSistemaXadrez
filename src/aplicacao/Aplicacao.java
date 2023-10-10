@@ -37,6 +37,12 @@ public class Aplicacao {
 				if (pecaCapturada != null) {
 					listaPecasCapturadas.add(pecaCapturada);
 				}
+				
+				if (partidaXadrez.getPecaPromovida() != null) {
+					System.out.print("Digite peca para promocao (Q(Rainha)/B/C/T): ");
+					String tipo = sc.nextLine();
+					partidaXadrez.substituirPecaPromovida(tipo);
+				}
 			}
 			catch (XadrezExcecao execao) {
 				System.out.println(execao.getMessage());
