@@ -85,14 +85,14 @@ public class Rei extends PecaXadrez {
 		}
 
 		// MovimentoEspecialRoque
-		if (getContagemMovimento() == 0 && partidaXadrez.getCheque()) {
+		if (getContagemMovimento() == 0 && !partidaXadrez.getCheque()) {
 			// movimentoEspecialRoqueDoLadoDoReiTorre_RoquePequeno
 			Posicao posicaoTorreLadoReiRoquePequeno = new Posicao(posicao.getLinha(), posicao.getColuna() + 3);
 			if (testarJogadaEspecialRoque(posicaoTorreLadoReiRoquePequeno)) {
 				Posicao pos1 = new Posicao(posicao.getLinha(), posicao.getColuna() + 1);
 				Posicao pos2 = new Posicao(posicao.getLinha(), posicao.getColuna() + 2);
 				if (getTabuleiro().peca(pos1) == null && getTabuleiro().peca(pos2) == null) {
-					movimentosPossiveis[posicaoTorreLadoReiRoquePequeno.getLinha()][posicaoTorreLadoReiRoquePequeno.getColuna() + 2] = true;
+					movimentosPossiveis[posicao.getLinha()][posicao.getColuna() + 2] = true;
 				}
 			}
 
@@ -103,7 +103,7 @@ public class Rei extends PecaXadrez {
 				Posicao pos2 = new Posicao(posicao.getLinha(), posicao.getColuna() - 2);
 				Posicao pos3 = new Posicao(posicao.getLinha(), posicao.getColuna() - 3);
 				if (getTabuleiro().peca(pos1) == null && getTabuleiro().peca(pos2) == null && getTabuleiro().peca(pos3) == null) {
-					movimentosPossiveis[posicaoTorreLadoRainhaRoqueGrande.getLinha()][posicaoTorreLadoRainhaRoqueGrande.getColuna() - 2] = true;
+					movimentosPossiveis[posicao.getLinha()][posicao.getColuna() - 2] = true;
 				}
 			}
 		}
